@@ -1,66 +1,154 @@
 [[Qt]]
-arch = "armv7l"
+arch = "aarch64"
 cxxstring_abi = "cxx03"
-git-tree-sha1 = "39f5d5ecade0f92182d2a210b6e9d44e1230aeb6"
+git-tree-sha1 = "9825659803be7deade294ed1ba8d8c0b5c2417c9"
 libc = "glibc"
 os = "linux"
 
     [[Qt.download]]
-    sha256 = "5714b9103621ef2d0f3b033bad7cfda36691ca201432415bccfc69826e959173"
-    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.0+3/Qt.v5.15.0.armv7l-linux-gnueabihf-cxx03.tar.gz"
+    sha256 = "aee327d11f8090fafa02e5a5fb11184f24d23234da90624ae6e77cc0de703a2f"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.aarch64-linux-gnu-cxx03.tar.gz"
 [[Qt]]
-arch = "armv7l"
+arch = "aarch64"
 cxxstring_abi = "cxx11"
-git-tree-sha1 = "f005c89bcd2ed7e48b4f2e726831eb82e04a1905"
+git-tree-sha1 = "80f36d775497d41f91e78b86d5510a7cee25b8b1"
 libc = "glibc"
 os = "linux"
 
     [[Qt.download]]
-    sha256 = "520a4d352b74d0d685db11c5e2b3fc607fa05d8f6daf933fd4b894121e56ae71"
-    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.0+3/Qt.v5.15.0.armv7l-linux-gnueabihf-cxx11.tar.gz"
+    sha256 = "45d59d707c836f44f30839a5579e5d847d7676f0020ce525f217daf1b7f8fc4e"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.aarch64-linux-gnu-cxx11.tar.gz"
+[[Qt]]
+arch = "armv7l"
+call_abi = "eabihf"
+cxxstring_abi = "cxx03"
+git-tree-sha1 = "6edca3df2dbee618712e5169d9bbc44bbd1bc62f"
+libc = "glibc"
+os = "linux"
+
+    [[Qt.download]]
+    sha256 = "348efc9919a2fe186273cde8581c7e23dd3b2c7d389d984fb1a5696bf571e5bb"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.armv7l-linux-gnueabihf-cxx03.tar.gz"
+[[Qt]]
+arch = "armv7l"
+call_abi = "eabihf"
+cxxstring_abi = "cxx11"
+git-tree-sha1 = "7b1db0d40957f4a8e7fe5f9268a994f63e6ee6ba"
+libc = "glibc"
+os = "linux"
+
+    [[Qt.download]]
+    sha256 = "b8edecc98973a7057bf008bd9cc80fb38fd14f8ee120e04ce8478fb0eb8c36a6"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.armv7l-linux-gnueabihf-cxx11.tar.gz"
+[[Qt]]
+arch = "i686"
+cxxstring_abi = "cxx03"
+git-tree-sha1 = "1c3c0ed249f03b95941b2647fee9328b794f20fa"
+libc = "glibc"
+os = "linux"
+
+    [[Qt.download]]
+    sha256 = "237b377335f54c5b2c3e5a5d085583cf4167a780ef833ac314c2858fcfcaaaf6"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.i686-linux-gnu-cxx03.tar.gz"
+[[Qt]]
+arch = "i686"
+cxxstring_abi = "cxx11"
+git-tree-sha1 = "93260797b22bee4edb6fb7f2c4f72512a2b6697e"
+libc = "glibc"
+os = "linux"
+
+    [[Qt.download]]
+    sha256 = "b6f968253f872f51a013b532b414c31756b4f4ee9b1167e04a1028a052f16a31"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.i686-linux-gnu-cxx11.tar.gz"
+[[Qt]]
+arch = "powerpc64le"
+cxxstring_abi = "cxx03"
+git-tree-sha1 = "b0eeca2fefefdeef81a065602222686357322f0f"
+libc = "glibc"
+os = "linux"
+
+    [[Qt.download]]
+    sha256 = "28d08caadb13750738c9f8bb80cafa8ab38df67317e71fb2f404c3fd7aed284a"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.powerpc64le-linux-gnu-cxx03.tar.gz"
+[[Qt]]
+arch = "powerpc64le"
+cxxstring_abi = "cxx11"
+git-tree-sha1 = "e7e8906d6e1b6dbbc6f3ee7b7ff65bb234a90246"
+libc = "glibc"
+os = "linux"
+
+    [[Qt.download]]
+    sha256 = "e6c12b4a9038e35918528cd47634070b7fb7bb1ff16b7bf8cb0b423a9b6fa5eb"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.powerpc64le-linux-gnu-cxx11.tar.gz"
 [[Qt]]
 arch = "x86_64"
 cxxstring_abi = "cxx03"
-git-tree-sha1 = "aaa7c83ee4feb0c6d699501167a2619abde4139e"
+git-tree-sha1 = "1979264e6fa003ffc68e6daee177a02b6ef61367"
 libc = "glibc"
 os = "linux"
 
     [[Qt.download]]
-    sha256 = "a9cd70926517f503f0136a58ec46bb50a2658bd858d48bec1d7128ba099bb7aa"
-    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.0+3/Qt.v5.15.0.x86_64-linux-gnu-cxx03.tar.gz"
+    sha256 = "5762979cfe7e72c483e27203f6bf8b465ed8f4e33f738c2f6b488d15c95da76d"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.x86_64-linux-gnu-cxx03.tar.gz"
 [[Qt]]
 arch = "x86_64"
 cxxstring_abi = "cxx11"
-git-tree-sha1 = "7f048fc36bb1113f6146f608439ffd23114a4c36"
+git-tree-sha1 = "88ce5f00656a15580dd57ce06b013edab1fe74cc"
 libc = "glibc"
 os = "linux"
 
     [[Qt.download]]
-    sha256 = "024f2e5749c7609c8841c3dda02b272dc09446a83e5245ee83ebd5b7091a9d36"
-    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.0+3/Qt.v5.15.0.x86_64-linux-gnu-cxx11.tar.gz"
+    sha256 = "80c276371f0f90c6da55492ada3f3b2b663d3352a66506bfb5035451ec17f379"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.x86_64-linux-gnu-cxx11.tar.gz"
 [[Qt]]
 arch = "x86_64"
+git-tree-sha1 = "f4aa232f5bf003dca8a6ca30fdcd52e6655e5535"
+os = "freebsd"
+
+    [[Qt.download]]
+    sha256 = "874534736f3e8ae052a49eb6a169b9e775b3a2af168836ff3cba4bcd7708d865"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.x86_64-unknown-freebsd.tar.gz"
+[[Qt]]
+arch = "i686"
 cxxstring_abi = "cxx03"
-git-tree-sha1 = "fdf603d6703d6962298abaffcced6e89abf19259"
+git-tree-sha1 = "63e93cf0281149dffcbc9ec0f766f42aa3530d24"
 os = "windows"
 
     [[Qt.download]]
-    sha256 = "f2548f4ed19c3db385f429e4b1b00582ae07d5ca93b368bcf047e93c187dbcab"
-    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.0+3/Qt.v5.15.0.x86_64-w64-mingw32-cxx03.tar.gz"
+    sha256 = "7aa7460d975939a56b16c79f9344a9948cfe98ab80d665c6d76b0d810c65183b"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.i686-w64-mingw32-cxx03.tar.gz"
 [[Qt]]
-arch = "x86_64"
+arch = "i686"
 cxxstring_abi = "cxx11"
-git-tree-sha1 = "a0510274250125dd1ab5305934ebb8144c10787d"
+git-tree-sha1 = "88c4ffca98d3c6dde88a63681040e8c06f4c7870"
 os = "windows"
 
     [[Qt.download]]
-    sha256 = "503c836f3222b1fdc949693c7efcc6f115c984c23144e7cc6f8edf730a468356"
-    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.0+3/Qt.v5.15.0.x86_64-w64-mingw32-cxx11.tar.gz"
+    sha256 = "25e9d5a5764408de71c809e34c50e3b2b4d949280c0a1c9a1d01e5d571d1c28b"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.i686-w64-mingw32-cxx11.tar.gz"
 [[Qt]]
 arch = "x86_64"
-git-tree-sha1 = "2cb154cd91aa24f8120a30441414a4507ad0311f"
+cxxstring_abi = "cxx03"
+git-tree-sha1 = "9cc28a61445429fdcb4019cb59c1c96313fe0268"
+os = "windows"
+
+    [[Qt.download]]
+    sha256 = "e79e4870589f8ded0c00f6c550f22c1bd36bf9389aa2af2f31564e4116cb618e"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.x86_64-w64-mingw32-cxx03.tar.gz"
+[[Qt]]
+arch = "x86_64"
+cxxstring_abi = "cxx11"
+git-tree-sha1 = "9bf932c8791cfe70751ea60e728460268bf57777"
+os = "windows"
+
+    [[Qt.download]]
+    sha256 = "ffa872ad0a0d9a58bb135e8f43c1474387b557cb06853aba2777a82f2c84d8b6"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.x86_64-w64-mingw32-cxx11.tar.gz"
+[[Qt]]
+arch = "x86_64"
+git-tree-sha1 = "9e69dd01a99d7bd5d32548de92fe99006c858f2a"
 os = "macos"
 
     [[Qt.download]]
-    sha256 = "eba88ca0dfe5696c42072c7d0b640c39b8bdc3041d598d3d7c0b8a0afbd68d63"
-    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.0+3/Qt.v5.15.0.x86_64-apple-darwin14.tar.gz"
+    sha256 = "994269a5c82b8af02af8542e9a35a1985ab997f8e7e36a0a33a0768f6d752120"
+    url = "https://github.com/JuliaBinaryWrappers/Qt_jll.jl/releases/download/Qt-v5.15.1+0/Qt.v5.15.1.x86_64-apple-darwin.tar.gz"

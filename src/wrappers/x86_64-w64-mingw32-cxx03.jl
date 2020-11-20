@@ -11,976 +11,323 @@ using xkbcommon_jll
 using Fontconfig_jll
 using Glib_jll
 using Zlib_jll
-## Global variables
-PATH = ""
-LIBPATH = ""
-LIBPATH_env = "PATH"
-LIBPATH_default = ""
-
-# Relative path to `libqt53danimation`
-const libqt53danimation_splitpath = ["bin", "Qt53DAnimation.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53danimation_path = ""
-
-# libqt53danimation-specific global declaration
-# This will be filled out by __init__()
-libqt53danimation_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53danimation = "Qt53DAnimation.dll"
-
-
-# Relative path to `libqt53dcore`
-const libqt53dcore_splitpath = ["bin", "Qt53DCore.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dcore_path = ""
-
-# libqt53dcore-specific global declaration
-# This will be filled out by __init__()
-libqt53dcore_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dcore = "Qt53DCore.dll"
-
-
-# Relative path to `libqt53dextras`
-const libqt53dextras_splitpath = ["bin", "Qt53DExtras.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dextras_path = ""
-
-# libqt53dextras-specific global declaration
-# This will be filled out by __init__()
-libqt53dextras_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dextras = "Qt53DExtras.dll"
-
-
-# Relative path to `libqt53dinput`
-const libqt53dinput_splitpath = ["bin", "Qt53DInput.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dinput_path = ""
-
-# libqt53dinput-specific global declaration
-# This will be filled out by __init__()
-libqt53dinput_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dinput = "Qt53DInput.dll"
-
-
-# Relative path to `libqt53dlogic`
-const libqt53dlogic_splitpath = ["bin", "Qt53DLogic.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dlogic_path = ""
-
-# libqt53dlogic-specific global declaration
-# This will be filled out by __init__()
-libqt53dlogic_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dlogic = "Qt53DLogic.dll"
-
-
-# Relative path to `libqt53dquick`
-const libqt53dquick_splitpath = ["bin", "Qt53DQuick.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dquick_path = ""
-
-# libqt53dquick-specific global declaration
-# This will be filled out by __init__()
-libqt53dquick_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dquick = "Qt53DQuick.dll"
-
-
-# Relative path to `libqt53dquickanimation`
-const libqt53dquickanimation_splitpath = ["bin", "Qt53DQuickAnimation.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dquickanimation_path = ""
-
-# libqt53dquickanimation-specific global declaration
-# This will be filled out by __init__()
-libqt53dquickanimation_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dquickanimation = "Qt53DQuickAnimation.dll"
-
-
-# Relative path to `libqt53dquickextras`
-const libqt53dquickextras_splitpath = ["bin", "Qt53DQuickExtras.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dquickextras_path = ""
-
-# libqt53dquickextras-specific global declaration
-# This will be filled out by __init__()
-libqt53dquickextras_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dquickextras = "Qt53DQuickExtras.dll"
-
-
-# Relative path to `libqt53dquickinput`
-const libqt53dquickinput_splitpath = ["bin", "Qt53DQuickInput.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dquickinput_path = ""
-
-# libqt53dquickinput-specific global declaration
-# This will be filled out by __init__()
-libqt53dquickinput_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dquickinput = "Qt53DQuickInput.dll"
-
-
-# Relative path to `libqt53dquickrender`
-const libqt53dquickrender_splitpath = ["bin", "Qt53DQuickRender.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dquickrender_path = ""
-
-# libqt53dquickrender-specific global declaration
-# This will be filled out by __init__()
-libqt53dquickrender_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dquickrender = "Qt53DQuickRender.dll"
-
-
-# Relative path to `libqt53dquickscene2d`
-const libqt53dquickscene2d_splitpath = ["bin", "Qt53DQuickScene2D.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53dquickscene2d_path = ""
-
-# libqt53dquickscene2d-specific global declaration
-# This will be filled out by __init__()
-libqt53dquickscene2d_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53dquickscene2d = "Qt53DQuickScene2D.dll"
-
-
-# Relative path to `libqt53drender`
-const libqt53drender_splitpath = ["bin", "Qt53DRender.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt53drender_path = ""
-
-# libqt53drender-specific global declaration
-# This will be filled out by __init__()
-libqt53drender_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt53drender = "Qt53DRender.dll"
-
-
-# Relative path to `libqt5bodymovin`
-const libqt5bodymovin_splitpath = ["bin", "Qt5Bodymovin.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5bodymovin_path = ""
-
-# libqt5bodymovin-specific global declaration
-# This will be filled out by __init__()
-libqt5bodymovin_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5bodymovin = "Qt5Bodymovin.dll"
-
-
-# Relative path to `libqt5charts`
-const libqt5charts_splitpath = ["bin", "Qt5Charts.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5charts_path = ""
-
-# libqt5charts-specific global declaration
-# This will be filled out by __init__()
-libqt5charts_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5charts = "Qt5Charts.dll"
-
-
-# Relative path to `libqt5concurrent`
-const libqt5concurrent_splitpath = ["bin", "Qt5Concurrent.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5concurrent_path = ""
-
-# libqt5concurrent-specific global declaration
-# This will be filled out by __init__()
-libqt5concurrent_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5concurrent = "Qt5Concurrent.dll"
-
-
-# Relative path to `libqt5core`
-const libqt5core_splitpath = ["bin", "Qt5Core.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5core_path = ""
-
-# libqt5core-specific global declaration
-# This will be filled out by __init__()
-libqt5core_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5core = "Qt5Core.dll"
-
-
-# Relative path to `libqt5dbus`
-const libqt5dbus_splitpath = ["bin", "Qt5DBus.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5dbus_path = ""
-
-# libqt5dbus-specific global declaration
-# This will be filled out by __init__()
-libqt5dbus_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5dbus = "Qt5DBus.dll"
-
-
-# Relative path to `libqt5gui`
-const libqt5gui_splitpath = ["bin", "Qt5Gui.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5gui_path = ""
-
-# libqt5gui-specific global declaration
-# This will be filled out by __init__()
-libqt5gui_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5gui = "Qt5Gui.dll"
-
-
-# Relative path to `libqt5multimedia`
-const libqt5multimedia_splitpath = ["bin", "Qt5Multimedia.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5multimedia_path = ""
-
-# libqt5multimedia-specific global declaration
-# This will be filled out by __init__()
-libqt5multimedia_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5multimedia = "Qt5Multimedia.dll"
-
-
-# Relative path to `libqt5multimediaquick`
-const libqt5multimediaquick_splitpath = ["bin", "Qt5MultimediaQuick.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5multimediaquick_path = ""
-
-# libqt5multimediaquick-specific global declaration
-# This will be filled out by __init__()
-libqt5multimediaquick_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5multimediaquick = "Qt5MultimediaQuick.dll"
-
-
-# Relative path to `libqt5multimediawidgets`
-const libqt5multimediawidgets_splitpath = ["bin", "Qt5MultimediaWidgets.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5multimediawidgets_path = ""
-
-# libqt5multimediawidgets-specific global declaration
-# This will be filled out by __init__()
-libqt5multimediawidgets_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5multimediawidgets = "Qt5MultimediaWidgets.dll"
-
-
-# Relative path to `libqt5network`
-const libqt5network_splitpath = ["bin", "Qt5Network.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5network_path = ""
-
-# libqt5network-specific global declaration
-# This will be filled out by __init__()
-libqt5network_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5network = "Qt5Network.dll"
-
-
-# Relative path to `libqt5opengl`
-const libqt5opengl_splitpath = ["bin", "Qt5OpenGL.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5opengl_path = ""
-
-# libqt5opengl-specific global declaration
-# This will be filled out by __init__()
-libqt5opengl_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5opengl = "Qt5OpenGL.dll"
-
-
-# Relative path to `libqt5printsupport`
-const libqt5printsupport_splitpath = ["bin", "Qt5PrintSupport.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5printsupport_path = ""
-
-# libqt5printsupport-specific global declaration
-# This will be filled out by __init__()
-libqt5printsupport_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5printsupport = "Qt5PrintSupport.dll"
-
-
-# Relative path to `libqt5qml`
-const libqt5qml_splitpath = ["bin", "Qt5Qml.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5qml_path = ""
-
-# libqt5qml-specific global declaration
-# This will be filled out by __init__()
-libqt5qml_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5qml = "Qt5Qml.dll"
-
-
-# Relative path to `libqt5qmlmodels`
-const libqt5qmlmodels_splitpath = ["bin", "Qt5QmlModels.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5qmlmodels_path = ""
-
-# libqt5qmlmodels-specific global declaration
-# This will be filled out by __init__()
-libqt5qmlmodels_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5qmlmodels = "Qt5QmlModels.dll"
-
-
-# Relative path to `libqt5qmlworkerscript`
-const libqt5qmlworkerscript_splitpath = ["bin", "Qt5QmlWorkerScript.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5qmlworkerscript_path = ""
-
-# libqt5qmlworkerscript-specific global declaration
-# This will be filled out by __init__()
-libqt5qmlworkerscript_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5qmlworkerscript = "Qt5QmlWorkerScript.dll"
-
-
-# Relative path to `libqt5quick`
-const libqt5quick_splitpath = ["bin", "Qt5Quick.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quick_path = ""
-
-# libqt5quick-specific global declaration
-# This will be filled out by __init__()
-libqt5quick_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quick = "Qt5Quick.dll"
-
-
-# Relative path to `libqt5quick3d`
-const libqt5quick3d_splitpath = ["bin", "Qt5Quick3D.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quick3d_path = ""
-
-# libqt5quick3d-specific global declaration
-# This will be filled out by __init__()
-libqt5quick3d_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quick3d = "Qt5Quick3D.dll"
-
-
-# Relative path to `libqt5quick3dassetimport`
-const libqt5quick3dassetimport_splitpath = ["bin", "Qt5Quick3DAssetImport.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quick3dassetimport_path = ""
-
-# libqt5quick3dassetimport-specific global declaration
-# This will be filled out by __init__()
-libqt5quick3dassetimport_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quick3dassetimport = "Qt5Quick3DAssetImport.dll"
-
-
-# Relative path to `libqt5quick3drender`
-const libqt5quick3drender_splitpath = ["bin", "Qt5Quick3DRender.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quick3drender_path = ""
-
-# libqt5quick3drender-specific global declaration
-# This will be filled out by __init__()
-libqt5quick3drender_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quick3drender = "Qt5Quick3DRender.dll"
-
-
-# Relative path to `libqt5quick3druntimerender`
-const libqt5quick3druntimerender_splitpath = ["bin", "Qt5Quick3DRuntimeRender.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quick3druntimerender_path = ""
-
-# libqt5quick3druntimerender-specific global declaration
-# This will be filled out by __init__()
-libqt5quick3druntimerender_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quick3druntimerender = "Qt5Quick3DRuntimeRender.dll"
-
-
-# Relative path to `libqt5quick3dutils`
-const libqt5quick3dutils_splitpath = ["bin", "Qt5Quick3DUtils.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quick3dutils_path = ""
-
-# libqt5quick3dutils-specific global declaration
-# This will be filled out by __init__()
-libqt5quick3dutils_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quick3dutils = "Qt5Quick3DUtils.dll"
-
-
-# Relative path to `libqt5quickcontrols2`
-const libqt5quickcontrols2_splitpath = ["bin", "Qt5QuickControls2.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quickcontrols2_path = ""
-
-# libqt5quickcontrols2-specific global declaration
-# This will be filled out by __init__()
-libqt5quickcontrols2_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quickcontrols2 = "Qt5QuickControls2.dll"
-
-
-# Relative path to `libqt5quickparticles`
-const libqt5quickparticles_splitpath = ["bin", "Qt5QuickParticles.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quickparticles_path = ""
-
-# libqt5quickparticles-specific global declaration
-# This will be filled out by __init__()
-libqt5quickparticles_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quickparticles = "Qt5QuickParticles.dll"
-
-
-# Relative path to `libqt5quickshapes`
-const libqt5quickshapes_splitpath = ["bin", "Qt5QuickShapes.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quickshapes_path = ""
-
-# libqt5quickshapes-specific global declaration
-# This will be filled out by __init__()
-libqt5quickshapes_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quickshapes = "Qt5QuickShapes.dll"
-
-
-# Relative path to `libqt5quicktemplates2`
-const libqt5quicktemplates2_splitpath = ["bin", "Qt5QuickTemplates2.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quicktemplates2_path = ""
-
-# libqt5quicktemplates2-specific global declaration
-# This will be filled out by __init__()
-libqt5quicktemplates2_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quicktemplates2 = "Qt5QuickTemplates2.dll"
-
-
-# Relative path to `libqt5quicktest`
-const libqt5quicktest_splitpath = ["bin", "Qt5QuickTest.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quicktest_path = ""
-
-# libqt5quicktest-specific global declaration
-# This will be filled out by __init__()
-libqt5quicktest_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quicktest = "Qt5QuickTest.dll"
-
-
-# Relative path to `libqt5quickwidgets`
-const libqt5quickwidgets_splitpath = ["bin", "Qt5QuickWidgets.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5quickwidgets_path = ""
-
-# libqt5quickwidgets-specific global declaration
-# This will be filled out by __init__()
-libqt5quickwidgets_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5quickwidgets = "Qt5QuickWidgets.dll"
-
-
-# Relative path to `libqt5sql`
-const libqt5sql_splitpath = ["bin", "Qt5Sql.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5sql_path = ""
-
-# libqt5sql-specific global declaration
-# This will be filled out by __init__()
-libqt5sql_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5sql = "Qt5Sql.dll"
-
-
-# Relative path to `libqt5svg`
-const libqt5svg_splitpath = ["bin", "Qt5Svg.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5svg_path = ""
-
-# libqt5svg-specific global declaration
-# This will be filled out by __init__()
-libqt5svg_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5svg = "Qt5Svg.dll"
-
-
-# Relative path to `libqt5test`
-const libqt5test_splitpath = ["bin", "Qt5Test.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5test_path = ""
-
-# libqt5test-specific global declaration
-# This will be filled out by __init__()
-libqt5test_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5test = "Qt5Test.dll"
-
-
-# Relative path to `libqt5widgets`
-const libqt5widgets_splitpath = ["bin", "Qt5Widgets.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5widgets_path = ""
-
-# libqt5widgets-specific global declaration
-# This will be filled out by __init__()
-libqt5widgets_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5widgets = "Qt5Widgets.dll"
-
-
-# Relative path to `libqt5xml`
-const libqt5xml_splitpath = ["bin", "Qt5Xml.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5xml_path = ""
-
-# libqt5xml-specific global declaration
-# This will be filled out by __init__()
-libqt5xml_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5xml = "Qt5Xml.dll"
-
-
-# Relative path to `libqt5xmlpatterns`
-const libqt5xmlpatterns_splitpath = ["bin", "Qt5XmlPatterns.dll"]
-
-# This will be filled out by __init__() for all products, as it must be done at runtime
-libqt5xmlpatterns_path = ""
-
-# libqt5xmlpatterns-specific global declaration
-# This will be filled out by __init__()
-libqt5xmlpatterns_handle = C_NULL
-
-# This must be `const` so that we can use it with `ccall()`
-const libqt5xmlpatterns = "Qt5XmlPatterns.dll"
-
-
-"""
-Open all libraries
-"""
+JLLWrappers.@generate_wrapper_header("Qt")
+JLLWrappers.@declare_library_product(libqt53danimation, "Qt53DAnimation.dll")
+JLLWrappers.@declare_library_product(libqt53dcore, "Qt53DCore.dll")
+JLLWrappers.@declare_library_product(libqt53dextras, "Qt53DExtras.dll")
+JLLWrappers.@declare_library_product(libqt53dinput, "Qt53DInput.dll")
+JLLWrappers.@declare_library_product(libqt53dlogic, "Qt53DLogic.dll")
+JLLWrappers.@declare_library_product(libqt53dquick, "Qt53DQuick.dll")
+JLLWrappers.@declare_library_product(libqt53dquickanimation, "Qt53DQuickAnimation.dll")
+JLLWrappers.@declare_library_product(libqt53dquickextras, "Qt53DQuickExtras.dll")
+JLLWrappers.@declare_library_product(libqt53dquickinput, "Qt53DQuickInput.dll")
+JLLWrappers.@declare_library_product(libqt53dquickrender, "Qt53DQuickRender.dll")
+JLLWrappers.@declare_library_product(libqt53dquickscene2d, "Qt53DQuickScene2D.dll")
+JLLWrappers.@declare_library_product(libqt53drender, "Qt53DRender.dll")
+JLLWrappers.@declare_library_product(libqt5bodymovin, "Qt5Bodymovin.dll")
+JLLWrappers.@declare_library_product(libqt5charts, "Qt5Charts.dll")
+JLLWrappers.@declare_library_product(libqt5concurrent, "Qt5Concurrent.dll")
+JLLWrappers.@declare_library_product(libqt5core, "Qt5Core.dll")
+JLLWrappers.@declare_library_product(libqt5dbus, "Qt5DBus.dll")
+JLLWrappers.@declare_library_product(libqt5gui, "Qt5Gui.dll")
+JLLWrappers.@declare_library_product(libqt5multimedia, "Qt5Multimedia.dll")
+JLLWrappers.@declare_library_product(libqt5multimediaquick, "Qt5MultimediaQuick.dll")
+JLLWrappers.@declare_library_product(libqt5multimediawidgets, "Qt5MultimediaWidgets.dll")
+JLLWrappers.@declare_library_product(libqt5network, "Qt5Network.dll")
+JLLWrappers.@declare_library_product(libqt5opengl, "Qt5OpenGL.dll")
+JLLWrappers.@declare_library_product(libqt5printsupport, "Qt5PrintSupport.dll")
+JLLWrappers.@declare_library_product(libqt5qml, "Qt5Qml.dll")
+JLLWrappers.@declare_library_product(libqt5qmlmodels, "Qt5QmlModels.dll")
+JLLWrappers.@declare_library_product(libqt5qmlworkerscript, "Qt5QmlWorkerScript.dll")
+JLLWrappers.@declare_library_product(libqt5quick, "Qt5Quick.dll")
+JLLWrappers.@declare_library_product(libqt5quick3d, "Qt5Quick3D.dll")
+JLLWrappers.@declare_library_product(libqt5quick3dassetimport, "Qt5Quick3DAssetImport.dll")
+JLLWrappers.@declare_library_product(libqt5quick3drender, "Qt5Quick3DRender.dll")
+JLLWrappers.@declare_library_product(libqt5quick3druntimerender, "Qt5Quick3DRuntimeRender.dll")
+JLLWrappers.@declare_library_product(libqt5quick3dutils, "Qt5Quick3DUtils.dll")
+JLLWrappers.@declare_library_product(libqt5quickcontrols2, "Qt5QuickControls2.dll")
+JLLWrappers.@declare_library_product(libqt5quickparticles, "Qt5QuickParticles.dll")
+JLLWrappers.@declare_library_product(libqt5quickshapes, "Qt5QuickShapes.dll")
+JLLWrappers.@declare_library_product(libqt5quicktemplates2, "Qt5QuickTemplates2.dll")
+JLLWrappers.@declare_library_product(libqt5quicktest, "Qt5QuickTest.dll")
+JLLWrappers.@declare_library_product(libqt5quickwidgets, "Qt5QuickWidgets.dll")
+JLLWrappers.@declare_library_product(libqt5sql, "Qt5Sql.dll")
+JLLWrappers.@declare_library_product(libqt5svg, "Qt5Svg.dll")
+JLLWrappers.@declare_library_product(libqt5test, "Qt5Test.dll")
+JLLWrappers.@declare_library_product(libqt5widgets, "Qt5Widgets.dll")
+JLLWrappers.@declare_library_product(libqt5xml, "Qt5Xml.dll")
+JLLWrappers.@declare_library_product(libqt5xmlpatterns, "Qt5XmlPatterns.dll")
 function __init__()
-    global artifact_dir = abspath(artifact"Qt")
-
-    # Initialize PATH and LIBPATH environment variable listings
-    global PATH_list, LIBPATH_list
-    # From the list of our dependencies, generate a tuple of all the PATH and LIBPATH lists,
-    # then append them to our own.
-    foreach(p -> append!(PATH_list, p), (Xorg_libXext_jll.PATH_list, Xorg_libxcb_jll.PATH_list, Xorg_xcb_util_wm_jll.PATH_list, Xorg_xcb_util_image_jll.PATH_list, Xorg_xcb_util_keysyms_jll.PATH_list, Xorg_xcb_util_renderutil_jll.PATH_list, xkbcommon_jll.PATH_list, Fontconfig_jll.PATH_list, Glib_jll.PATH_list, Zlib_jll.PATH_list,))
-    foreach(p -> append!(LIBPATH_list, p), (Xorg_libXext_jll.LIBPATH_list, Xorg_libxcb_jll.LIBPATH_list, Xorg_xcb_util_wm_jll.LIBPATH_list, Xorg_xcb_util_image_jll.LIBPATH_list, Xorg_xcb_util_keysyms_jll.LIBPATH_list, Xorg_xcb_util_renderutil_jll.LIBPATH_list, xkbcommon_jll.LIBPATH_list, Fontconfig_jll.LIBPATH_list, Glib_jll.LIBPATH_list, Zlib_jll.LIBPATH_list,))
-
-    global libqt53danimation_path = normpath(joinpath(artifact_dir, libqt53danimation_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53danimation_handle = dlopen(libqt53danimation_path)
-    push!(LIBPATH_list, dirname(libqt53danimation_path))
-
-    global libqt53dcore_path = normpath(joinpath(artifact_dir, libqt53dcore_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dcore_handle = dlopen(libqt53dcore_path)
-    push!(LIBPATH_list, dirname(libqt53dcore_path))
-
-    global libqt53dextras_path = normpath(joinpath(artifact_dir, libqt53dextras_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dextras_handle = dlopen(libqt53dextras_path)
-    push!(LIBPATH_list, dirname(libqt53dextras_path))
-
-    global libqt53dinput_path = normpath(joinpath(artifact_dir, libqt53dinput_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dinput_handle = dlopen(libqt53dinput_path)
-    push!(LIBPATH_list, dirname(libqt53dinput_path))
-
-    global libqt53dlogic_path = normpath(joinpath(artifact_dir, libqt53dlogic_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dlogic_handle = dlopen(libqt53dlogic_path)
-    push!(LIBPATH_list, dirname(libqt53dlogic_path))
-
-    global libqt53dquick_path = normpath(joinpath(artifact_dir, libqt53dquick_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dquick_handle = dlopen(libqt53dquick_path)
-    push!(LIBPATH_list, dirname(libqt53dquick_path))
-
-    global libqt53dquickanimation_path = normpath(joinpath(artifact_dir, libqt53dquickanimation_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dquickanimation_handle = dlopen(libqt53dquickanimation_path)
-    push!(LIBPATH_list, dirname(libqt53dquickanimation_path))
-
-    global libqt53dquickextras_path = normpath(joinpath(artifact_dir, libqt53dquickextras_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dquickextras_handle = dlopen(libqt53dquickextras_path)
-    push!(LIBPATH_list, dirname(libqt53dquickextras_path))
-
-    global libqt53dquickinput_path = normpath(joinpath(artifact_dir, libqt53dquickinput_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dquickinput_handle = dlopen(libqt53dquickinput_path)
-    push!(LIBPATH_list, dirname(libqt53dquickinput_path))
-
-    global libqt53dquickrender_path = normpath(joinpath(artifact_dir, libqt53dquickrender_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dquickrender_handle = dlopen(libqt53dquickrender_path)
-    push!(LIBPATH_list, dirname(libqt53dquickrender_path))
-
-    global libqt53dquickscene2d_path = normpath(joinpath(artifact_dir, libqt53dquickscene2d_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53dquickscene2d_handle = dlopen(libqt53dquickscene2d_path)
-    push!(LIBPATH_list, dirname(libqt53dquickscene2d_path))
-
-    global libqt53drender_path = normpath(joinpath(artifact_dir, libqt53drender_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt53drender_handle = dlopen(libqt53drender_path)
-    push!(LIBPATH_list, dirname(libqt53drender_path))
-
-    global libqt5bodymovin_path = normpath(joinpath(artifact_dir, libqt5bodymovin_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5bodymovin_handle = dlopen(libqt5bodymovin_path)
-    push!(LIBPATH_list, dirname(libqt5bodymovin_path))
-
-    global libqt5charts_path = normpath(joinpath(artifact_dir, libqt5charts_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5charts_handle = dlopen(libqt5charts_path)
-    push!(LIBPATH_list, dirname(libqt5charts_path))
-
-    global libqt5concurrent_path = normpath(joinpath(artifact_dir, libqt5concurrent_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5concurrent_handle = dlopen(libqt5concurrent_path)
-    push!(LIBPATH_list, dirname(libqt5concurrent_path))
-
-    global libqt5core_path = normpath(joinpath(artifact_dir, libqt5core_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5core_handle = dlopen(libqt5core_path)
-    push!(LIBPATH_list, dirname(libqt5core_path))
-
-    global libqt5dbus_path = normpath(joinpath(artifact_dir, libqt5dbus_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5dbus_handle = dlopen(libqt5dbus_path)
-    push!(LIBPATH_list, dirname(libqt5dbus_path))
-
-    global libqt5gui_path = normpath(joinpath(artifact_dir, libqt5gui_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5gui_handle = dlopen(libqt5gui_path)
-    push!(LIBPATH_list, dirname(libqt5gui_path))
-
-    global libqt5multimedia_path = normpath(joinpath(artifact_dir, libqt5multimedia_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5multimedia_handle = dlopen(libqt5multimedia_path)
-    push!(LIBPATH_list, dirname(libqt5multimedia_path))
-
-    global libqt5multimediaquick_path = normpath(joinpath(artifact_dir, libqt5multimediaquick_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5multimediaquick_handle = dlopen(libqt5multimediaquick_path)
-    push!(LIBPATH_list, dirname(libqt5multimediaquick_path))
-
-    global libqt5multimediawidgets_path = normpath(joinpath(artifact_dir, libqt5multimediawidgets_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5multimediawidgets_handle = dlopen(libqt5multimediawidgets_path)
-    push!(LIBPATH_list, dirname(libqt5multimediawidgets_path))
-
-    global libqt5network_path = normpath(joinpath(artifact_dir, libqt5network_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5network_handle = dlopen(libqt5network_path)
-    push!(LIBPATH_list, dirname(libqt5network_path))
-
-    global libqt5opengl_path = normpath(joinpath(artifact_dir, libqt5opengl_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5opengl_handle = dlopen(libqt5opengl_path)
-    push!(LIBPATH_list, dirname(libqt5opengl_path))
-
-    global libqt5printsupport_path = normpath(joinpath(artifact_dir, libqt5printsupport_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5printsupport_handle = dlopen(libqt5printsupport_path)
-    push!(LIBPATH_list, dirname(libqt5printsupport_path))
-
-    global libqt5qml_path = normpath(joinpath(artifact_dir, libqt5qml_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5qml_handle = dlopen(libqt5qml_path)
-    push!(LIBPATH_list, dirname(libqt5qml_path))
-
-    global libqt5qmlmodels_path = normpath(joinpath(artifact_dir, libqt5qmlmodels_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5qmlmodels_handle = dlopen(libqt5qmlmodels_path)
-    push!(LIBPATH_list, dirname(libqt5qmlmodels_path))
-
-    global libqt5qmlworkerscript_path = normpath(joinpath(artifact_dir, libqt5qmlworkerscript_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5qmlworkerscript_handle = dlopen(libqt5qmlworkerscript_path)
-    push!(LIBPATH_list, dirname(libqt5qmlworkerscript_path))
-
-    global libqt5quick_path = normpath(joinpath(artifact_dir, libqt5quick_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quick_handle = dlopen(libqt5quick_path)
-    push!(LIBPATH_list, dirname(libqt5quick_path))
-
-    global libqt5quick3d_path = normpath(joinpath(artifact_dir, libqt5quick3d_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quick3d_handle = dlopen(libqt5quick3d_path)
-    push!(LIBPATH_list, dirname(libqt5quick3d_path))
-
-    global libqt5quick3dassetimport_path = normpath(joinpath(artifact_dir, libqt5quick3dassetimport_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quick3dassetimport_handle = dlopen(libqt5quick3dassetimport_path)
-    push!(LIBPATH_list, dirname(libqt5quick3dassetimport_path))
-
-    global libqt5quick3drender_path = normpath(joinpath(artifact_dir, libqt5quick3drender_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quick3drender_handle = dlopen(libqt5quick3drender_path)
-    push!(LIBPATH_list, dirname(libqt5quick3drender_path))
-
-    global libqt5quick3druntimerender_path = normpath(joinpath(artifact_dir, libqt5quick3druntimerender_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quick3druntimerender_handle = dlopen(libqt5quick3druntimerender_path)
-    push!(LIBPATH_list, dirname(libqt5quick3druntimerender_path))
-
-    global libqt5quick3dutils_path = normpath(joinpath(artifact_dir, libqt5quick3dutils_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quick3dutils_handle = dlopen(libqt5quick3dutils_path)
-    push!(LIBPATH_list, dirname(libqt5quick3dutils_path))
-
-    global libqt5quickcontrols2_path = normpath(joinpath(artifact_dir, libqt5quickcontrols2_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quickcontrols2_handle = dlopen(libqt5quickcontrols2_path)
-    push!(LIBPATH_list, dirname(libqt5quickcontrols2_path))
-
-    global libqt5quickparticles_path = normpath(joinpath(artifact_dir, libqt5quickparticles_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quickparticles_handle = dlopen(libqt5quickparticles_path)
-    push!(LIBPATH_list, dirname(libqt5quickparticles_path))
-
-    global libqt5quickshapes_path = normpath(joinpath(artifact_dir, libqt5quickshapes_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quickshapes_handle = dlopen(libqt5quickshapes_path)
-    push!(LIBPATH_list, dirname(libqt5quickshapes_path))
-
-    global libqt5quicktemplates2_path = normpath(joinpath(artifact_dir, libqt5quicktemplates2_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quicktemplates2_handle = dlopen(libqt5quicktemplates2_path)
-    push!(LIBPATH_list, dirname(libqt5quicktemplates2_path))
-
-    global libqt5quicktest_path = normpath(joinpath(artifact_dir, libqt5quicktest_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quicktest_handle = dlopen(libqt5quicktest_path)
-    push!(LIBPATH_list, dirname(libqt5quicktest_path))
-
-    global libqt5quickwidgets_path = normpath(joinpath(artifact_dir, libqt5quickwidgets_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5quickwidgets_handle = dlopen(libqt5quickwidgets_path)
-    push!(LIBPATH_list, dirname(libqt5quickwidgets_path))
-
-    global libqt5sql_path = normpath(joinpath(artifact_dir, libqt5sql_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5sql_handle = dlopen(libqt5sql_path)
-    push!(LIBPATH_list, dirname(libqt5sql_path))
-
-    global libqt5svg_path = normpath(joinpath(artifact_dir, libqt5svg_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5svg_handle = dlopen(libqt5svg_path)
-    push!(LIBPATH_list, dirname(libqt5svg_path))
-
-    global libqt5test_path = normpath(joinpath(artifact_dir, libqt5test_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5test_handle = dlopen(libqt5test_path)
-    push!(LIBPATH_list, dirname(libqt5test_path))
-
-    global libqt5widgets_path = normpath(joinpath(artifact_dir, libqt5widgets_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5widgets_handle = dlopen(libqt5widgets_path)
-    push!(LIBPATH_list, dirname(libqt5widgets_path))
-
-    global libqt5xml_path = normpath(joinpath(artifact_dir, libqt5xml_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5xml_handle = dlopen(libqt5xml_path)
-    push!(LIBPATH_list, dirname(libqt5xml_path))
-
-    global libqt5xmlpatterns_path = normpath(joinpath(artifact_dir, libqt5xmlpatterns_splitpath...))
-
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libqt5xmlpatterns_handle = dlopen(libqt5xmlpatterns_path)
-    push!(LIBPATH_list, dirname(libqt5xmlpatterns_path))
-
-    # Filter out duplicate and empty entries in our PATH and LIBPATH entries
-    filter!(!isempty, unique!(PATH_list))
-    filter!(!isempty, unique!(LIBPATH_list))
-    global PATH = join(PATH_list, ';')
-    global LIBPATH = join(vcat(LIBPATH_list, [Sys.BINDIR, joinpath(Sys.BINDIR, Base.LIBDIR, "julia"), joinpath(Sys.BINDIR, Base.LIBDIR)]), ';')
-
-    
+    JLLWrappers.@generate_init_header(Xorg_libXext_jll, Xorg_libxcb_jll, Xorg_xcb_util_wm_jll, Xorg_xcb_util_image_jll, Xorg_xcb_util_keysyms_jll, Xorg_xcb_util_renderutil_jll, xkbcommon_jll, Fontconfig_jll, Glib_jll, Zlib_jll)
+    JLLWrappers.@init_library_product(
+        libqt53danimation,
+        "bin\\Qt53DAnimation.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dcore,
+        "bin\\Qt53DCore.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dextras,
+        "bin\\Qt53DExtras.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dinput,
+        "bin\\Qt53DInput.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dlogic,
+        "bin\\Qt53DLogic.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dquick,
+        "bin\\Qt53DQuick.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dquickanimation,
+        "bin\\Qt53DQuickAnimation.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dquickextras,
+        "bin\\Qt53DQuickExtras.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dquickinput,
+        "bin\\Qt53DQuickInput.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dquickrender,
+        "bin\\Qt53DQuickRender.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53dquickscene2d,
+        "bin\\Qt53DQuickScene2D.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt53drender,
+        "bin\\Qt53DRender.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5bodymovin,
+        "bin\\Qt5Bodymovin.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5charts,
+        "bin\\Qt5Charts.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5concurrent,
+        "bin\\Qt5Concurrent.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5core,
+        "bin\\Qt5Core.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5dbus,
+        "bin\\Qt5DBus.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5gui,
+        "bin\\Qt5Gui.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5multimedia,
+        "bin\\Qt5Multimedia.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5multimediaquick,
+        "bin\\Qt5MultimediaQuick.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5multimediawidgets,
+        "bin\\Qt5MultimediaWidgets.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5network,
+        "bin\\Qt5Network.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5opengl,
+        "bin\\Qt5OpenGL.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5printsupport,
+        "bin\\Qt5PrintSupport.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5qml,
+        "bin\\Qt5Qml.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5qmlmodels,
+        "bin\\Qt5QmlModels.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5qmlworkerscript,
+        "bin\\Qt5QmlWorkerScript.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quick,
+        "bin\\Qt5Quick.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quick3d,
+        "bin\\Qt5Quick3D.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quick3dassetimport,
+        "bin\\Qt5Quick3DAssetImport.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quick3drender,
+        "bin\\Qt5Quick3DRender.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quick3druntimerender,
+        "bin\\Qt5Quick3DRuntimeRender.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quick3dutils,
+        "bin\\Qt5Quick3DUtils.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quickcontrols2,
+        "bin\\Qt5QuickControls2.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quickparticles,
+        "bin\\Qt5QuickParticles.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quickshapes,
+        "bin\\Qt5QuickShapes.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quicktemplates2,
+        "bin\\Qt5QuickTemplates2.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quicktest,
+        "bin\\Qt5QuickTest.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5quickwidgets,
+        "bin\\Qt5QuickWidgets.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5sql,
+        "bin\\Qt5Sql.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5svg,
+        "bin\\Qt5Svg.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5test,
+        "bin\\Qt5Test.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5widgets,
+        "bin\\Qt5Widgets.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5xml,
+        "bin\\Qt5Xml.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@init_library_product(
+        libqt5xmlpatterns,
+        "bin\\Qt5XmlPatterns.dll",
+        RTLD_LAZY | RTLD_DEEPBIND,
+    )
+
+    JLLWrappers.@generate_init_footer()
 end  # __init__()
-

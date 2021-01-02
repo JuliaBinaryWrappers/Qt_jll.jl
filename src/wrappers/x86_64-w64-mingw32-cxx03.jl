@@ -8,10 +8,12 @@ using Xorg_xcb_util_image_jll
 using Xorg_xcb_util_keysyms_jll
 using Xorg_xcb_util_renderutil_jll
 using xkbcommon_jll
+using Libglvnd_jll
 using Fontconfig_jll
 using Glib_jll
 using Zlib_jll
 using CompilerSupportLibraries_jll
+using OpenSSL_jll
 JLLWrappers.@generate_wrapper_header("Qt")
 JLLWrappers.@declare_library_product(libqt53danimation, "Qt53DAnimation.dll")
 JLLWrappers.@declare_library_product(libqt53dcore, "Qt53DCore.dll")
@@ -59,7 +61,7 @@ JLLWrappers.@declare_library_product(libqt5widgets, "Qt5Widgets.dll")
 JLLWrappers.@declare_library_product(libqt5xml, "Qt5Xml.dll")
 JLLWrappers.@declare_library_product(libqt5xmlpatterns, "Qt5XmlPatterns.dll")
 function __init__()
-    JLLWrappers.@generate_init_header(Xorg_libXext_jll, Xorg_libxcb_jll, Xorg_xcb_util_wm_jll, Xorg_xcb_util_image_jll, Xorg_xcb_util_keysyms_jll, Xorg_xcb_util_renderutil_jll, xkbcommon_jll, Fontconfig_jll, Glib_jll, Zlib_jll, CompilerSupportLibraries_jll)
+    JLLWrappers.@generate_init_header(Xorg_libXext_jll, Xorg_libxcb_jll, Xorg_xcb_util_wm_jll, Xorg_xcb_util_image_jll, Xorg_xcb_util_keysyms_jll, Xorg_xcb_util_renderutil_jll, xkbcommon_jll, Libglvnd_jll, Fontconfig_jll, Glib_jll, Zlib_jll, CompilerSupportLibraries_jll, OpenSSL_jll)
     JLLWrappers.@init_library_product(
         libqt53danimation,
         "bin\\Qt53DAnimation.dll",
